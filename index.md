@@ -1,5 +1,5 @@
 ---
 layout: main
-title: "SpaceML"
+title: "space.ml"
 slogan: "From Model-Driven Astrophysics to Data-Driven Astrophysics"
 ---
