@@ -1,5 +1,5 @@
 ---
 layout: main
 title: "space.ml"
-slogan: "Data-Driven Astrophysics"
+slogan: "data-driven astrophysics"
 ---
