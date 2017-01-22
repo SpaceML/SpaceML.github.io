@@ -1,5 +1,5 @@
 ---
 layout: main
 title: "SpaceML"
-slogan: "Shifting Model-Driven Astrophysics to Data-Driven Astrophysics"
+slogan: "From Model-Driven Astrophysics to Data-Driven Astrophysics"
 ---
