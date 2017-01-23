@@ -1,6 +1,6 @@
 ---
 layout: proj
-title: "SpaceML :: GalaxyGAN"
+title: "space.ml :: GalaxyGAN"
 slogan: "Generative Adversarial Networks recover features in astrophysical images of galaxies beyond the deconvolution limit"
 projname: "GalaxyGAN"
 paperbutton: "ArXiv Version"
