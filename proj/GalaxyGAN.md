@@ -15,6 +15,23 @@ paperlink: "https://academic.oup.com/mnrasl/article-lookup/doi/10.1093/mnrasl/sl
 
 <!--<b><a href="http://space.ml/res/gan_paper.pdf">Paper PDF</a></b>-->
 
+# Selected Press Coverage
+
+<ul>
+<li> <a style="color:white" href="https://www.theatlantic.com/technology/archive/2017/03/machines-will-do-our-stargazing-for-us/518319/">
+        <strong>The Atlantic</strong>: Machine Learning Is Bringing the Cosmos Into Focus</a><br/>
+        </li>
+<li> <a style="color:white" href="https://www.wired.com/2017/03/astronomers-deploy-ai-unravel-mysteries-universe/">
+        <strong>WIRED Science</strong>: Astronomers Deploy AI to Unravel the Mysteries of the Universe</a><br/>
+        </li>
+<li> <a style="color:white" href="https://www.theregister.co.uk/2017/02/23/galaxies_to_drugs_ai_hype_makes_its_way_to_science/?mt=1488825917133">
+        <strong>The Register</strong>: From drugs to galaxy hunting, AI is elbowing its way into boffins' labs</a><br/>
+        </li>
+<li> <a style="color:white" href="https://phys.org/news/2017-02-neural-networks-sharpest-images.html">
+        <strong>Phys.org</strong>: Neural networks promise sharpest ever images</a><br/>
+        </li>
+</ul>
+
 # Weakly Supervised Neural Network with Astrophysics Knowledge
 
 One limiting factor in training deep neural networks is often the number of training examples one can get. The folklore often tells us “the more, the better.” In GalaxyGAN, one training example is a pair of two images: one clear image without space noise and one that we can observe in the presence of space noise.
