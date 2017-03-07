@@ -3,8 +3,8 @@ layout: proj
 title: "space.ml :: GalaxyGAN"
 slogan: "Generative Adversarial Networks recover features in astrophysical images of galaxies beyond the deconvolution limit"
 projname: "GalaxyGAN"
-paperbutton: "ArXiv Version"
-paperlink: "#"
+paperbutton: "MNRAS 2017"
+paperlink: "https://academic.oup.com/mnrasl/article-lookup/doi/10.1093/mnrasl/slx008"
 ---
 
 
@@ -13,7 +13,7 @@ paperlink: "#"
 
 <b>Abstract:</b> Observations of astrophysical objects such as galaxies are limited by various sources of random and systematic noise from the sky background, the optical system of the telescope and the detector used to record the data. Conventional deconvolution techniques are limited in their ability to recover features in imaging data by the Shannon-Nyquist sampling theorem. Here we train a generative adversarial network (GAN) on a sample of 4,550 images of nearby galaxies at 0.01\<z\<0.02 from the Sloan Digital Sky Survey and conduct 10X cross validation to evaluate the results. We present a method using a GAN trained on galaxy images that can recover features from artificially degraded images with worse seeing and higher noise than the original with a performance which far exceeds simple deconvolution. The ability to better recover detailed features such as galaxy morphology from low-signal-to-noise and low angular resolution imaging data significantly increases our ability to study existing data sets of astrophysical objects as well as future observations with observatories such as the Large Synoptic Sky Telescope (LSST) and the Hubble and James Webb space telescopes. 
 
-<b><a href="http://space.ml/res/gan_paper.pdf">Paper PDF</a></b>
+<!--<b><a href="http://space.ml/res/gan_paper.pdf">Paper PDF</a></b>-->
 
 # Weakly Supervised Neural Network with Astrophysics Knowledge
 
