@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}: {{ page.slogan }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=e320019f6d5b78b36806e86990cbf1d0e6f5421c">
+    <link rel="shortcut icon" type="image/x-icon" href="https://github.com/SpaceML/SpaceML.github.io/blob/master/res/wechat.png?raw=true" />
+    
+    <div id='wx_pic' style='margin:0 auto;display:none;'>
+    <img src='https://github.com/SpaceML/SpaceML.github.io/blob/master/res/wechat.png?raw=true' />
+    </div>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90017111-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+  </head>
+  <body>
+      <section class="page-header" style="background-image: url('https://github.com/SpaceML/SpaceML.github.io/blob/master/res/background4.jpg?raw=true');">
+      <h1 class="project-name">{{ page.title }}</h1>
+      <h2 class="project-tagline">{{ page.slogan }}</h2>
+      <a href="http://space.ml/code/{{ page.projname }}" class="btn">Code and VM</a>
+      <a href="http://space.ml/demo/{{ page.projname }}" class="btn">System Demo</a>
+      <a href="{{ page.paperlink }}" class="btn">{{ page.paperbutton }}</a>
+      <a href="http://space.ml/supp/{{ page.projname }}" class="btn">Supplementary Material</a>
+      </section>
+
+    <section class="main-content">
+
+<div class="post" style="-webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto;">
+  {{ content }}
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-credits"><a href="http://space.ml">SpaceML</a> &copy; 2017.</span>
+      </footer>
+      
+    </section>
+
+    
+  </body>
+</html>
