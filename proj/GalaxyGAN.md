@@ -8,7 +8,7 @@ paperlink: "https://academic.oup.com/mnrasl/article-lookup/doi/10.1093/mnrasl/sl
 ---
 
 
-<img src="https://github.com/SpaceML/SpaceML.github.io/blob/master/gg/GAN_example.png?raw=true">
+<img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/GAN_example.png?raw=true">
 <I>Example results achieved with the GAN. From left to right: the original SDSS image, the degraded image with a worse PSF and higher noise level (indicating the PSF and noise level used), the image as recovered by the GAN, and for comparison, the result of a deconvolution. This figure visually illustrates the GAN's ability to recover features which conventional deconvolutions cannot.</I>
 
 <b>Abstract:</b> Observations of astrophysical objects such as galaxies are limited by various sources of random and systematic noise from the sky background, the optical system of the telescope and the detector used to record the data. Conventional deconvolution techniques are limited in their ability to recover features in imaging data by the Shannon-Nyquist sampling theorem. Here we train a generative adversarial network (GAN) on a sample of 4,550 images of nearby galaxies at 0.01\<z\<0.02 from the Sloan Digital Sky Survey and conduct 10X cross validation to evaluate the results. We present a method using a GAN trained on galaxy images that can recover features from artificially degraded images with worse seeing and higher noise than the original with a performance which far exceeds simple deconvolution. The ability to better recover detailed features such as galaxy morphology from low-signal-to-noise and low angular resolution imaging data significantly increases our ability to study existing data sets of astrophysical objects as well as future observations with observatories such as the Large Synoptic Sky Telescope (LSST) and the Hubble and James Webb space telescopes. 
@@ -47,13 +47,13 @@ The GAN method presented here opens up the possibility of recovering <i>more</i>
 <table style="border:none;">
 <tr>
 
-<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/master/gg/lucas.jpg?raw=true" width="150"><br/>
+<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/lucas.jpg?raw=true" width="150"><br/>
 <a href="#">Lucas Fowler</a></td>
 
-<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/master/gg/hantian.png?raw=true" width="150"><br/>
+<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/hantian.png?raw=true" width="150"><br/>
 <a href="https://people.inf.ethz.ch/hanzhang/">Hantian Zhang</a></td>
 
-<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/master/gg/gokul.jpg?raw=true" width="150"><br/>
+<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/gokul.jpg?raw=true" width="150"><br/>
 <a href="#">Gokula Santhanam</a></td>
 
 </tr>
@@ -61,10 +61,10 @@ The GAN method presented here opens up the possibility of recovering <i>more</i>
 
 <tr>
 
-<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/master/gg/kevin.png?raw=true" width="150"><br/>
+<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/kevin.png?raw=true" width="150"><br/>
 <a href="http://www.astro.ethz.ch/schawinski">Kevin Schawinski</a></td>
 
-<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/master/gg/ce.jpeg?raw=true" width="150"><br/>
+<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/ce.jpeg?raw=true" width="150"><br/>
 <a href="https://www.inf.ethz.ch/personal/ce.zhang/">Ce Zhang</a></td>
 
 </tr>

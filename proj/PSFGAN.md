@@ -3,44 +3,65 @@ layout: proj
 title: "space.ml :: PSFGAN"
 slogan: "A Generative Adversarial Network system for separating quasar point sources and host galaxy light"
 projname: "PSFGAN"
-paperbutton: "MNRAS 2017"
-paperlink: "https://academic.oup.com/mnrasl/article-lookup/doi/10.1093/mnrasl/slx008"
+paperbutton: "MNRAS 2018"
+paperlink: #
 ---
 
 
 
+<img src="../pg/PSFGAN_example_large.png?raw=true">
+<I>Example of <tt>PSFGAN</tt> subtracting a simulated point source from an image in the test set. The left image is the original SDSS galaxy we use for comparison. The conditional input for the generator network is the original galaxy with a simulated point source (representing an unobscured AGN) in its center which is the second image in this chart.  <tt>PSFGAN</tt> learns to recover (image on the right) the original image and can generalize its knowledge in order to subtract point sources from galaxies it has never seen before.</I>
 
-<b>Abstract:</b> Observations of astrophysical objects such as galaxies are limited by various sources of random and systematic noise from the sky background, the optical system of the telescope and the detector used to record the data. Conventional deconvolution techniques are limited in their ability to recover features in imaging data by the Shannon-Nyquist sampling theorem. Here we train a generative adversarial network (GAN) on a sample of 4,550 images of nearby galaxies at 0.01\<z\<0.02 from the Sloan Digital Sky Survey and conduct 10X cross validation to evaluate the results. We present a method using a GAN trained on galaxy images that can recover features from artificially degraded images with worse seeing and higher noise than the original with a performance which far exceeds simple deconvolution. The ability to better recover detailed features such as galaxy morphology from low-signal-to-noise and low angular resolution imaging data significantly increases our ability to study existing data sets of astrophysical objects as well as future observations with observatories such as the Large Synoptic Sky Telescope (LSST) and the Hubble and James Webb space telescopes. 
+<b>Abstract:</b> 
+The study of unobscured active galactic nuclei (AGN) and quasars depends on the reliable decomposition of the light from the AGN point source and the extended host galaxy light.  The problem is typically approached using parametric fitting routines using separate models for the host galaxy and the point spread function (PSF). We present a new approach using a Generative Adversarial Network (GAN) trained on galaxy images. We test the method using Sloan Digital Sky Survey (SDSS) *r*-band images with artificial AGN point sources added which are then removed using the GAN and with parametric methods using GALFIT. When the AGN point source PS is more than twice as bright as the host galaxy, we find that our method, <tt>PSFGAN</tt>, can recover PS and host galaxy magnitudes with smaller systematic error and a scatter that is {% raw %}$$30\%-120\%$${% endraw %} of the scatter of parametric methods. <tt>PSFGAN</tt> is more tolerant to poor knowledge of the PSF than parametric methods. Our tests show that <tt>PSFGAN</tt> is robust against a shift in the PSF width of {% raw %}$$\pm 50\%$${% endraw %} if it is trained on multiple PSF's. Our results show that while the training set does matter for performance, we can still subtract point sources using a <tt>PSFGAN</tt> trained on non-astronomical images. While training a <tt>PSFGAN</tt> is computationally expensive, evaluation on data is more than {% raw %}$$40$${% endraw %} times faster than <tt>GALFIT</tt> fitting two components. Furthermore, it is more robust and easy to use than parametric methods as it requires no input parameters.
 
-<!--<b><a href="http://space.ml/res/gan_paper.pdf">Paper PDF</a></b>-->
+# Attention parameter
+<tt>PSFGAN</tt> is an adapted version of <a href="../proj/GalaxyGAN">GalaxyGAN</a> which in turn is based on <a href="https://github.com/phillipi/pix2pix">pix2pix</a>. To make <tt>PSFGAN</tt> focus on the center of the galaxy we extend the loss function of the generator with an L1 term computed on a small region around the center and weighted by an attention parameter. This modification drastically improves our ability to recover PS fluxes. 
 
-# Selected Press Coverage
+# Animals vs. Galaxies
+We show that <tt>PSFGAN</tt> uses its generalized knowledge about galaxy light distributions to subtract their central point sources by running it on images of cats and dogs. Furthermore we train the same architecture on animal images and compare its ability to subtract point sources.
 
-<ul>
-<li> <a href="https://www.theatlantic.com/technology/archive/2017/03/machines-will-do-our-stargazing-for-us/518319/">
-        <strong>The Atlantic</strong>: Machine Learning Is Bringing the Cosmos Into Focus</a><br/>
-        </li>
-<li> <a href="https://www.wired.com/2017/03/astronomers-deploy-ai-unravel-mysteries-universe/">
-        <strong>WIRED Science</strong>: Astronomers Deploy AI to Unravel the Mysteries of the Universe</a><br/>
-        </li>
-<li> <a href="https://www.theregister.co.uk/2017/02/23/galaxies_to_drugs_ai_hype_makes_its_way_to_science/?mt=1488825917133">
-        <strong>The Register</strong>: From drugs to galaxy hunting, AI is elbowing its way into boffins' labs</a><br/>
-        </li>
-<li> <a href="https://phys.org/news/2017-02-neural-networks-sharpest-images.html">
-        <strong>Phys.org</strong>: Neural networks promise sharpest ever images</a><br/>
-        </li>
-</ul>
+# Potential for large pipelines and high redshift
+Once <tt>PSFGAN</tt> is trained it is very fast in outputting the PS subtracted image. Furthermore it has a remarkable flexibility compared to parametric methods. Overall it is well-suited for automated analyses of large datasets. From a practical point of view it has a significand advantage over parametric methods for automated decomposition of quasars and host galaxies. 
+Furthermore it is a promising tool for studying AGN and their host galaxies at higher redshift where classical methods tend to break down. With increasing redshift the contrast ratio between AGN and host galaxy tends to be higher as the intrinsic emission emerges from a bluer part of the Spectral Energy Distribution (SED) where the AGN is dominant. Furthermore the host galaxy is affected by surface brightness dimming while the PS is not. This again increases the probability of fnding high contrast systems with increasing redshift. The range of high contrasts is exactly the range where <tt>PSFGAN</tt> has demonstrated to be superior to parametric methods.
 
-# Weakly Supervised Neural Network with Astrophysics Knowledge
+# Team Members
 
-One limiting factor in training deep neural networks is often the number of training examples one can get. The folklore often tells us “the more, the better.” In GalaxyGAN, one training example is a pair of two images: one clear image without space noise and one that we can observe in the presence of space noise.
+<table style="border:none;">
+<tr>
 
-Direct acquisition of such training pairs could be difficult because our ability to get clear images is limited by the throughput of a few high-quality telescopes. Instead, we choose to weakly supervise a neural network to generate training images automatically. The observations are simple; astrophysicists have been studying sky noises for hundreds of years, and they already have some physical models to describe their current understanding of such noises. Why not take advantage of such noise models to automatically degrade a relatively clear image as the training set? This observation allows us to generate a large-enough training set in just a couple of hours to train our generative adversarial network. You can see in our paper that the results obtained by this weak supervision mechanism: they are quite good!
-
-# Applications to astrophysics data sets
-The GAN method presented here opens up the possibility of recovering <i>more</i> information from existing and future imaging data. Applying this GAN to images of galaxies as demonstarted in the paper de-noises data and effectively improves the seeing. The method is thus similar to obtaining a deeper image with better seeing.  The reliability of the method relies heavily on the training set: the GAN generally can only produce useful improvements for features it has been trained on. It can attempt to reconstruct previously unknown features though with a lower degree of reliability. We propose that the GAN presented here, and methods based on it can be applied to a wide range of existing and future sky surveys (such as <a href="http://panstarrs.stsci.edu/">Pan-STARRS</a>, <a href="https://www.lsst.org/">LSST</a>, <a href="http://www.naoj.org/Projects/HSC/">HSC</a> and others).
+<td><img src="../pg/dominic.png?raw=true" width="150"><br/>
+<a href="#">Dominic Stark</a></td>
 
 
+<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/kevin.png?raw=true" width="150"><br/>
+<a href="http://www.astro.ethz.ch/schawinski">Kevin Schawinski</a></td>
+
+<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/ce.jpeg?raw=true" width="150"><br/>
+<a href="https://www.inf.ethz.ch/personal/ce.zhang/">Ce Zhang</a></td>
+
+	<td><img src="../pg/mike.png?raw=true" width="150"><br/>
+<a href="http://www.astro.ethz.ch/schawinski">Michael Koss</a></td>
+
+
+</tr>
+
+<tr>
+<td><img src="../pg/dennis.png?raw=true" width="150"><br/>
+<a href="#">Dennis Turp</a></td>
+
+
+<td><img src="../pg/lia.png?raw=true" width="150"><br/>
+<a href="http://www.astro.ethz.ch/schawinski">Lia Sartori</a></td>
+
+<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/hantian.png?raw=true" width="150"><br/>
+<a href="https://people.inf.ethz.ch/hanzhang/">Hantian Zhang</a></td>
+
+<td><img src="../pg/anna.png?raw=true" width="150"><br/>
+<a href="http://www.astro.ethz.ch/schawinski">Anna Weigel</a></td>
 
 
 
+
+</tr>
+</table>
