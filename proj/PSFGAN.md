@@ -13,7 +13,7 @@ paperlink: #
 <I>Example of <tt>PSFGAN</tt> subtracting a simulated point source from an image in the test set. The left image is the original SDSS galaxy we use for comparison. The conditional input for the generator network is the original galaxy with a simulated point source (representing an unobscured AGN) in its center which is the second image in this chart.  <tt>PSFGAN</tt> learns to recover (image on the right) the original image and can generalize its knowledge in order to subtract point sources from galaxies it has never seen before.</I>
 
 <b>Abstract:</b> 
-The study of unobscured active galactic nuclei (AGN) and quasars depends on the reliable decomposition of the light from the AGN point source and the extended host galaxy light.  The problem is typically approached using parametric fitting routines using separate models for the host galaxy and the point spread function (PSF). We present a new approach using a Generative Adversarial Network (GAN) trained on galaxy images. We test the method using Sloan Digital Sky Survey (SDSS) *r*-band images with artificial AGN point sources added which are then removed using the GAN and with parametric methods using GALFIT. When the AGN point source PS is more than twice as bright as the host galaxy, we find that our method, <tt>PSFGAN</tt>, can recover PS and host galaxy magnitudes with smaller systematic error and a scatter that is {% raw %}$$30\%-120\%$${% endraw %} of the scatter of parametric methods. <tt>PSFGAN</tt> is more tolerant to poor knowledge of the PSF than parametric methods. Our tests show that <tt>PSFGAN</tt> is robust against a shift in the PSF width of {% raw %}$$\pm 50\%$${% endraw %} if it is trained on multiple PSF's. Our results show that while the training set does matter for performance, we can still subtract point sources using a <tt>PSFGAN</tt> trained on non-astronomical images. While training a <tt>PSFGAN</tt> is computationally expensive, evaluation on data is more than {% raw %}$$40$${% endraw %} times faster than <tt>GALFIT</tt> fitting two components. Furthermore, it is more robust and easy to use than parametric methods as it requires no input parameters.
+The study of unobscured active galactic nuclei (AGN) and quasars depends on the reliable decomposition of the light from the AGN point source and the extended host galaxy light.  The problem is typically approached using parametric fitting routines using separate models for the host galaxy and the point spread function (PSF). We present a new approach using a Generative Adversarial Network (GAN) trained on galaxy images. We test the method using Sloan Digital Sky Survey (SDSS) *r*-band images with artificial AGN point sources added which are then removed using the GAN and with parametric methods using GALFIT. When the AGN point source PS is more than twice as bright as the host galaxy, we find that our method, <tt>PSFGAN</tt>, can recover PS and host galaxy magnitudes with smaller systematic error and a lower average scatter ({% raw %}$$49\%$$ {% endraw %}). <tt>PSFGAN</tt> is more tolerant to poor knowledge of the PSF than parametric methods. Our tests show that <tt>PSFGAN</tt> is robust against a shift in the PSF width of {% raw %}$$\pm 50\%$${% endraw %} if it is trained on multiple PSF's. We demonstrate that while a matched training set does improve performance, we can still subtract point sources using a <tt>PSFGAN</tt> trained on non-astronomical images. While initial training is computationally expensive, evaluation of <tt>PSFGAN</tt> on data is more than {% raw %}$$40$${% endraw %} times faster than <tt>GALFIT</tt> fitting two components. Furthermore, it is more robust and easy to use than parametric methods as it requires no input parameters.
 
 # Attention parameter
 <tt>PSFGAN</tt> is an adapted version of <a href="../proj/GalaxyGAN">GalaxyGAN</a> which in turn is based on <a href="https://github.com/phillipi/pix2pix">pix2pix</a>. To make <tt>PSFGAN</tt> focus on the center of the galaxy we extend the loss function of the generator with an L1 term computed on a small region around the center and weighted by an attention parameter. This modification drastically improves our ability to recover PS fluxes. 
@@ -29,39 +29,36 @@ Furthermore it is a promising tool for studying AGN and their host galaxies at h
 
 <table style="border:none;">
 <tr>
-
 <td><img src="../pg/dominic.png?raw=true" width="150"><br/>
 <a href="#">Dominic Stark</a></td>
 
+<td><img src="../pg/bart.png?raw=true" width="150"><br/>
+<a href="http://www.astro.ethz.ch/schawinski">Barthelemy Launet</a></td>
 
 <td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/kevin.png?raw=true" width="150"><br/>
 <a href="http://www.astro.ethz.ch/schawinski">Kevin Schawinski</a></td>
 
-<td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/ce.jpeg?raw=true" width="150"><br/>
+<td><img src="../pg/ce.png?raw=true" width="150"><br/>
 <a href="https://www.inf.ethz.ch/personal/ce.zhang/">Ce Zhang</a></td>
-
-	<td><img src="../pg/mike.png?raw=true" width="150"><br/>
-<a href="http://www.astro.ethz.ch/schawinski">Michael Koss</a></td>
-
-
 </tr>
 
 <tr>
-<td><img src="../pg/dennis.png?raw=true" width="150"><br/>
-<a href="#">Dennis Turp</a></td>
+<td><img src="../pg/mike.png?raw=true" width="150"><br/>
+<a href="http://www.astro.ethz.ch/schawinski">Michael Koss</a></td>
 
+<td><img src="../pg/dennis.png?raw=true" width="150"><br/>
+<a href="https://people.phys.ethz.ch/~rahimit/index.html">Dennis Turp</a></td>
 
 <td><img src="../pg/lia.png?raw=true" width="150"><br/>
 <a href="http://www.astro.ethz.ch/schawinski">Lia Sartori</a></td>
 
 <td><img src="https://github.com/SpaceML/SpaceML.github.io/blob/PSFGAN/gg/hantian.png?raw=true" width="150"><br/>
 <a href="https://people.inf.ethz.ch/hanzhang/">Hantian Zhang</a></td>
+</tr>
 
+<tr>
 <td><img src="../pg/anna.png?raw=true" width="150"><br/>
 <a href="http://www.astro.ethz.ch/schawinski">Anna Weigel</a></td>
-
-
-
-
 </tr>
+
 </table>
