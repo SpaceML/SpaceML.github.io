@@ -15,15 +15,15 @@ paperlink: #
 <b>Abstract:</b> 
 The study of unobscured active galactic nuclei (AGN) and quasars depends on the reliable decomposition of the light from the AGN point source and the extended host galaxy light.  The problem is typically approached using parametric fitting routines using separate models for the host galaxy and the point spread function (PSF). We present a new approach using a Generative Adversarial Network (GAN) trained on galaxy images. We test the method using Sloan Digital Sky Survey (SDSS) *r*-band images with artificial AGN point sources added which are then removed using the GAN and with parametric methods using GALFIT. When the AGN point source PS is more than twice as bright as the host galaxy, we find that our method, <tt>PSFGAN</tt>, can recover PS and host galaxy magnitudes with smaller systematic error and a lower average scatter ({% raw %}$$49\%$$ {% endraw %}). <tt>PSFGAN</tt> is more tolerant to poor knowledge of the PSF than parametric methods. Our tests show that <tt>PSFGAN</tt> is robust against a shift in the PSF width of {% raw %}$$\pm 50\%$${% endraw %} if it is trained on multiple PSF's. We demonstrate that while a matched training set does improve performance, we can still subtract point sources using a <tt>PSFGAN</tt> trained on non-astronomical images. While initial training is computationally expensive, evaluation of <tt>PSFGAN</tt> on data is more than {% raw %}$$40$${% endraw %} times faster than <tt>GALFIT</tt> fitting two components. Furthermore, it is more robust and easy to use than parametric methods as it requires no input parameters.
 
-# Attention parameter
-<tt>PSFGAN</tt> is an adapted version of <a href="../proj/GalaxyGAN">GalaxyGAN</a> which in turn is based on <a href="https://github.com/phillipi/pix2pix">pix2pix</a>. To make <tt>PSFGAN</tt> focus on the center of the galaxy we extend the loss function of the generator with an L1 term computed on a small region around the center and weighted by an attention parameter. This modification drastically improves our ability to recover PS fluxes. 
 
-# Animals vs. Galaxies
-We show that <tt>PSFGAN</tt> uses its generalized knowledge about galaxy light distributions to subtract their central point sources by running it on images of cats and dogs. Furthermore we train the same architecture on animal images and compare its ability to subtract point sources.
 
 # Potential for large pipelines and high redshift
 Once <tt>PSFGAN</tt> is trained it is very fast in outputting the PS subtracted image. Furthermore it has a remarkable flexibility compared to parametric methods. Overall it is well-suited for automated analyses of large datasets. From a practical point of view it has a significand advantage over parametric methods for automated decomposition of quasars and host galaxies. 
 Furthermore it is a promising tool for studying AGN and their host galaxies at higher redshift where classical methods tend to break down. With increasing redshift the contrast ratio between AGN and host galaxy tends to be higher as the intrinsic emission emerges from a bluer part of the Spectral Energy Distribution (SED) where the AGN is dominant. Furthermore the host galaxy is affected by surface brightness dimming while the PS is not. This again increases the probability of fnding high contrast systems with increasing redshift. The range of high contrasts is exactly the range where <tt>PSFGAN</tt> has demonstrated to be superior to parametric methods.
+
+
+# Animals vs. Galaxies
+We show that <tt>PSFGAN</tt> uses its generalized knowledge about galaxy light distributions to subtract their central point sources by running it on images of cats and dogs. Furthermore we train the same architecture on animal images and compare its ability to subtract point sources.
 
 # Team Members
 
