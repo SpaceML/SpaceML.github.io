@@ -1,5 +1,5 @@
 ---
-layout: proj
+layout: proj_PSFGAN
 title: "space.ml :: PSFGAN"
 slogan: "A Generative Adversarial Network system for separating quasar point sources and host galaxy light"
 projname: "PSFGAN"
