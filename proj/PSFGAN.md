@@ -18,12 +18,16 @@ The study of unobscured active galactic nuclei (AGN) and quasars depends on the 
 
 
 # Potential for large pipelines and high redshift
-Once <tt>PSFGAN</tt> is trained it is very fast in outputting the PS subtracted image. Furthermore it has a remarkable flexibility compared to parametric methods. Overall it is well-suited for automated analyses of large datasets. From a practical point of view it has a significand advantage over parametric methods for automated decomposition of quasars and host galaxies. 
-Furthermore it is a promising tool for studying AGN and their host galaxies at higher redshift where classical methods tend to break down. With increasing redshift the contrast ratio between AGN and host galaxy tends to be higher as the intrinsic emission emerges from a bluer part of the Spectral Energy Distribution (SED) where the AGN is dominant. Furthermore the host galaxy is affected by surface brightness dimming while the PS is not. This again increases the probability of fnding high contrast systems with increasing redshift. The range of high contrasts is exactly the range where <tt>PSFGAN</tt> has demonstrated to be superior to parametric methods.
+Once <tt>PSFGAN</tt> is trained it is very fast in outputting the PS subtracted image. Furthermore it has a remarkable flexibility compared to parametric methods. Overall it is well-suited for automated analyses of large datasets. 
 
+Furthermore it is a promising tool for studying AGN and their host galaxies at higher redshift where classical methods tend to break down. With increasing redshift the contrast ratio between AGN and host galaxy tends to be higher as the intrinsic emission emerges from a bluer part of the Spectral Energy Distribution (SED) where the AGN is dominant. Also the host galaxy is affected by surface brightness dimming while the PS is not. This again increases the probability of fnding high contrast systems with increasing redshift. The range of high contrasts is exactly the range where <tt>PSFGAN</tt> has demonstrated to be superior to parametric methods.
 
 # Animals vs. Galaxies
-We show that <tt>PSFGAN</tt> uses its generalized knowledge about galaxy light distributions to subtract their central point sources by running it on images of cats and dogs. Furthermore we train the same architecture on animal images and compare its ability to subtract point sources.
+We show that <tt>PSFGAN</tt> uses its generalized knowledge about galaxy light distributions to subtract their central point sources by running it on images of cats and dogs. Also we train the same architecture on animal images and compare its ability to subtract point sources. We find that <tt>PSFGAN</tt> can better subtract point sources from galaxies if it was trained on galaxies.
+
+
+# Using <tt>PSFGAN</tt>
+To achieve optimal results, users should train <tt>PSFGAN</tt> on their own data and use a validation set to select the best model. However, if not enough training data is available, users can apply our pretrained models out of the box. In our work we have shown that the models pretrained on SDSS data can subtract AGN point sources from Hubble images. Using galaxies with {% raw %}$$z > 0.4$${% endraw %} in our test sets, we achieve comparable or better performance than parametric fitting in batch mode.
 
 # Team Members
 
