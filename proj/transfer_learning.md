@@ -15,7 +15,7 @@ We find that these deep learning methods perform significantly better than curre
 Finally, we perform a basic sanity-check by creating a merger sample with our method, and comparing with an already existing, manually created merger catalogue in terms of colour-mass distribution and stellar mass function.
 
 <p align="center">
-  <img src="../res/true_positives.png?raw=true" width="400" />
+  <img src="../tf/true_positives.png?raw=true" width="400" />
 </p>
 
 
