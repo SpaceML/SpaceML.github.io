@@ -4,7 +4,7 @@ title: "space.ml :: Transfer Learning"
 slogan: "Using transfer learning to detect galaxy mergers"
 projname: "transfer_learning"
 paperbutton: "MNRAS 2018"
-paperlink: #
+paperlink: https://arxiv.org/abs/1805.10289
 ---
 
 
