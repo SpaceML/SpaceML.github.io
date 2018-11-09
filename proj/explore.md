@@ -9,7 +9,8 @@ paperlink: #
 
 <img src="../pg/explore_transformation.jpeg?raw=true">
 <I>Example showing the aging of a human face learned from age labels, and the lowering of the sSFR of a galaxy using sSFR labels.</I>
-
+<br>
+<br>
 <b>Abstract:</b> <br>
 **Context:** Generative models open up the possibility to interrogate scientific data in a more data-driven way.<br>
 **Aims:** We propose a method for using generative models for exploring hypotheses in astrophysics and other areas. We use a neural network to show how we can independently manipulate physical attributes by encoding objects in latent space.<br>
