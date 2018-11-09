@@ -12,10 +12,10 @@ paperlink: #
 <br>
 <br>
 <b>Abstract:</b> <br>
-**Context:** Generative models open up the possibility to interrogate scientific data in a more data-driven way.<br>
-**Aims:** We propose a method for using generative models for exploring hypotheses in astrophysics and other areas. We use a neural network to show how we can independently manipulate physical attributes by encoding objects in latent space.<br>
-**Methods:** By learning a latent space representation of the data, we can use this network to forward model and explore hypotheses in a data-driven way. We train a neural network to generate artificial data to test hypotheses for the underlying physical processes.<br>
-**Results:** We demonstrate this process using a well-studied process in astrophysics, the quenching of star formation in galaxies as they move from low- to high-density environments. This approach can help explore astrophysical and other phenomena in a way different from current methods based on simulations and observations.
+<b>Context:</b> Generative models open up the possibility to interrogate scientific data in a more data-driven way.<br>
+<b>Aims:</b> We propose a method for using generative models for exploring hypotheses in astrophysics and other areas. We use a neural network to show how we can independently manipulate physical attributes by encoding objects in latent space.<br>
+<b>Methods:</b> By learning a latent space representation of the data, we can use this network to forward model and explore hypotheses in a data-driven way. We train a neural network to generate artificial data to test hypotheses for the underlying physical processes.<br>
+<b>Results:</b> We demonstrate this process using a well-studied process in astrophysics, the quenching of star formation in galaxies as they move from low- to high-density environments. This approach can help explore astrophysical and other phenomena in a way different from current methods based on simulations and observations.
 
 
 # Potential future applications
